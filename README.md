@@ -16,7 +16,6 @@ necessary packages by using
 
 ```
 npm install
-
 ```
 
 ### `npm start`
@@ -46,6 +45,9 @@ the object should contain the following keys and values:
   the first will be label which provides the element with label, and the type.
   the type denotes the type of element that will be create.
 
+* actionButtons provides a place holder to a submit button.
+  the form will contain as much submit buttons as the array elements
+
 ### Available types:
 
 - radio
@@ -53,6 +55,3 @@ the object should contain the following keys and values:
 - text
 - date
 - checkbox
-
-* actionButtons provides a place holder to a submit button.
-  the form will contain as much submit buttons as the array elements
