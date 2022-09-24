@@ -6,7 +6,6 @@ import ResultForm from './resultForm';
 import ConfigDataContextProvider from '../context/configDataContext';
 
 const PageLayout : FC<{}> = () => {
-    const [formElementsArr, setFormElementsArr] = useState([]);
     let location = useLocation();
     const navigate = useNavigate();
 

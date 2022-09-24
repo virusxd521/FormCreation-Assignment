@@ -18,7 +18,10 @@ const ResultForm : FC<{}> = () => {
         setFormItems((prevState : any) => [...prevState, 
             <Form.Group className="mb-3" controlId={label}>
                 <Form.Label>{label}</Form.Label>
-                <Form.Control type={lowerType} placeholder="" />
+                <Form.Control type={lowerType} placeholder="" 
+                id={`${prevState.length}`}
+                key={prevState.length}
+                />
             </Form.Group>
         ])
     }
@@ -28,14 +31,18 @@ const ResultForm : FC<{}> = () => {
             <Form.Check
                 type={lowerType}
                 label={label}
-                id={`sssss`}
+                id={`${prevState.length}`}
+                key={prevState.length}
             />
         ])
     }
 
     const settingSubmitButtons = (text : string) : void => {
         setButtonItems((prevState : any) => [...prevState, 
-            <Button className='mt-4 mx-auto w-25' variant="primary" type="submit">
+            <Button className='mt-4 mx-auto w-25' variant="primary" type="submit"
+            id={`${prevState.length}`}
+            key={prevState.length}
+            >
                 {text}
             </Button>
         ])
