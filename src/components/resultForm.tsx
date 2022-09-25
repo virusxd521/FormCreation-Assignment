@@ -20,7 +20,6 @@ const ResultForm : FC<{}> = () => {
                 <Form.Label>{label}</Form.Label>
                 <Form.Control type={lowerType} placeholder="" 
                 id={`${prevState.length}`}
-                key={prevState.length}
                 />
             </Form.Group>
         ])
@@ -31,8 +30,7 @@ const ResultForm : FC<{}> = () => {
             <Form.Check
                 type={lowerType}
                 label={label}
-                id={`${prevState.length}`}
-                key={prevState.length}
+                id={`${prevState.length + 100}`}
             />
         ])
     }
@@ -40,8 +38,7 @@ const ResultForm : FC<{}> = () => {
     const settingSubmitButtons = (text : string) : void => {
         setButtonItems((prevState : any) => [...prevState, 
             <Button className='mt-4 mx-auto w-25' variant="primary" type="submit"
-            id={`${prevState.length}`}
-            key={prevState.length}
+            id={`${prevState.length + 1000}`}
             >
                 {text}
             </Button>
@@ -71,16 +68,17 @@ const ResultForm : FC<{}> = () => {
     useEffect(() => {
         componentLoadFunction();
     }, [submitedJsonData]);
-
+    
     return (
         <main className='d-flex mt-5'>
             <Form className='mx-auto w-50 d-flex flex-column'>
                 <h2>{submitedJsonData.title}</h2>
                 {
-                    formItems.map(item => item)
+                    formItems.map((item, index) => <React.Fragment key={index}>{item}</React.Fragment>
+                    )
                 }
                 {
-                    buttonItems.map(item => item)
+                    buttonItems.map((item, index) => <React.Fragment key={index + 100}>{item}</React.Fragment>)
                 }
 
             </Form>
